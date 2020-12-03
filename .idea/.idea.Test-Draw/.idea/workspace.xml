@@ -19,14 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a5fa377-014e-4185-812c-2dd8b7a521a9" name="Default Changelist" comment="v0.1">
+    <list default="true" id="1a5fa377-014e-4185-812c-2dd8b7a521a9" name="Default Changelist" comment="1. fix touch bug&#10;2. remove buffered data from clear">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Test-Draw/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Test-Draw/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Draw/DrawManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Draw/DrawManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networks/NetworkDraw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networks/NetworkDraw.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networks/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networks/NetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Networks/NetworkRPC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Networks/NetworkRPC.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +138,7 @@
       <workItem from="1606923940905" duration="57188000" />
       <workItem from="1607007618508" duration="8476000" />
       <workItem from="1607016933763" duration="1432000" />
-      <workItem from="1607022253413" duration="3775000" />
+      <workItem from="1607022253413" duration="4714000" />
     </task>
     <task id="LOCAL-00001" summary="v0.1">
       <created>1607017292537</created>
@@ -152,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607017292537</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1. fix touch bug&#10;2. remove buffered data from clear">
+      <created>1607026078445</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607026078445</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +177,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="v0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.1" />
+    <MESSAGE value="1. fix touch bug&#10;2. remove buffered data from clear" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. fix touch bug&#10;2. remove buffered data from clear" />
   </component>
   <component name="WindowStateProjectService">
     <state width="469" height="464" key="DebuggerActiveHint" timestamp="1607009232578">
@@ -246,10 +249,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="332" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607025365854" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1607017295931">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1607026080486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607017295931" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607026080486" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1607008886077">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
