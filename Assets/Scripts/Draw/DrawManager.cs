@@ -51,13 +51,7 @@ namespace Draw
             NetworkManager.Instance.JoinRoom += JoinRoom;
         }
 
-        private void JoinRoom()
-        {
-            EnableDrawing(true);
-        }
 
-
-        // Start is called before the first frame update
         void Start()
         {
             SetTextureProps();
@@ -66,11 +60,16 @@ namespace Draw
             ClearTexture();
         }
 
+
+        // Start is called before the first frame update
+
         private void OnEnable()
         {
             Instance = this;
         }
-        
+
+      
+
         private void Update()
         {
             if(!_draw) return;
@@ -78,7 +77,10 @@ namespace Draw
             InputDrag(_from,_to);
         }
         
-        
+        private void JoinRoom()
+        {
+            EnableDrawing(true);
+        }
         
       
         
@@ -206,7 +208,7 @@ namespace Draw
 
         private bool GetRectPosition(Vector3 pos, out Vector2 localPoint, Camera cam = null)
         {
-            var rectTr = _rectTransform.parent.transform as RectTransform;
+            var rectTr = _rectTransform;
             if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTr, pos, cam, out localPoint))
             {
                 return false;
