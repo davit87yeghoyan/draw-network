@@ -11,9 +11,9 @@ namespace Networks
 
         public PhotonView photonView;
         public event Action Clear;
-        public event Action<Vector2,Player> DrawCircle;
-        public event Action<Vector2,Vector2,Player> DrawDrag;
-        public event Action<Player> InputDownStatus;
+        public event Action<Vector2,Player,bool> DrawCircle;
+        public event Action<Vector2,Vector2,Player,bool> DrawDrag;
+        public event Action<Player,bool> InputDownStatus;
         
         
         public void RPC_Clear()
@@ -43,29 +43,31 @@ namespace Networks
         [PunRPC]
         private void RPC_OnClear(PhotonMessageInfo info)
         {
-            if(info.Sender.ActorNumber == PhotonNetwork.LocalPlayer.ActorNumber) return;
+            PhotonNetwork.OpRemoveCompleteCache();
+            
+            if(Equals(info.Sender, PhotonNetwork.LocalPlayer)) return;
             Clear?.Invoke();
         }        
         
         [PunRPC]
         private void RPC_OnDrawCircle(Vector2 pos, PhotonMessageInfo info)
         {
-            if(info.Sender.ActorNumber == PhotonNetwork.LocalPlayer.ActorNumber) return;
-            DrawCircle?.Invoke(pos,info.Sender);
+            if(Equals(info.Sender, PhotonNetwork.LocalPlayer)) return;
+            DrawCircle?.Invoke(pos,info.Sender,true);
         }
         
         [PunRPC]
         private void RPC_OnDrawDrag(Vector2 from,Vector2 to,PhotonMessageInfo info)
         {
-            if(info.Sender.ActorNumber == PhotonNetwork.LocalPlayer.ActorNumber) return;
-            DrawDrag?.Invoke(from,to,info.Sender);
+            if(Equals(info.Sender, PhotonNetwork.LocalPlayer)) return;
+            DrawDrag?.Invoke(from,to,info.Sender, true);
         }        
         
         [PunRPC]
         private void RPC_OnInputDownStatus(PhotonMessageInfo info)
         {
-            if(info.Sender.ActorNumber == PhotonNetwork.LocalPlayer.ActorNumber) return;
-            InputDownStatus?.Invoke(info.Sender);
+            if(Equals(info.Sender, PhotonNetwork.LocalPlayer)) return;
+            InputDownStatus?.Invoke(info.Sender,true);
         }
         #endregion
         

@@ -54,19 +54,19 @@ namespace Networks
             DrawManager.Instance.ClearTexture(true);
         }
 
-        private void OnDrawCircle(Vector2 obj, Player player)
+        private void OnDrawCircle(Vector2 obj, Player player, bool isRPC)
         {
-            DrawManager.Instance.InputDown(obj,player);
+            DrawManager.Instance.InputDown(obj,player,isRPC);
         }
 
-        private void OnDrawDrag(Vector2 arg1, Vector2 arg2,Player player)
+        private void OnDrawDrag(Vector2 arg1, Vector2 arg2,Player player,bool isRPC)
         {
-            DrawManager.Instance.InputDrag(arg1,arg2, player);
+            DrawManager.Instance.InputDrag(arg1,arg2, player,isRPC );
         }
         
-        private void OnInputDownStatus(Player player)
+        private void OnInputDownStatus(Player player,bool isRPC)
         {
-            DrawManager.Instance.SetInputDownStatus(player);
+            DrawManager.Instance.SetInputDownStatus(player,isRPC);
         }
     }
 }

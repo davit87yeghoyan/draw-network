@@ -54,8 +54,13 @@ namespace Networks
 
         private void CreateRoom()
         {
-            RoomOptions roomOptions = new RoomOptions {PublishUserId = true, MaxPlayers = byte.MaxValue};
-            PhotonNetwork.JoinOrCreateRoom("roomName1",roomOptions, TypedLobby.Default);
+            RoomOptions roomOptions = new RoomOptions
+            {
+                CleanupCacheOnLeave = false,
+                PublishUserId = true, 
+                MaxPlayers = byte.MaxValue
+            };
+            PhotonNetwork.JoinOrCreateRoom("roomName2",roomOptions, TypedLobby.Default);
         }
 
         public IEnumerator AsyncConnect()

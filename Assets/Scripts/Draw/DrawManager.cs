@@ -139,12 +139,20 @@ namespace Draw
             SetNewUpdatedPosIndex();
         }
 
-        public void SetInputDownStatus(Player player)
+        public void SetInputDownStatus(Player player,bool isRPC = false)
         {
+            if (player == null && isRPC)
+            {
+                SetNewUpdatedPosIndex();
+                return;
+            }
+            
+            
+            if (player == null) return;
             SetNewUpdatedPosIndexNetwork(player);
         }
 
-        public void InputDown(Vector2 pos,Player player = null)
+        public void InputDown(Vector2 pos,Player player = null, bool isRPC = false)
         {
             if (player != null)
             {
@@ -156,7 +164,10 @@ namespace Draw
                 return;
             }
             
+           
+            
             _texture2DDrawingHelper.DrawCircleFillInternal((int)pos.x, (int)pos.y, TrySetColorMaster);
+            if(isRPC) return;
             DrawCircle?.Invoke(pos);
         }
 
@@ -175,7 +186,7 @@ namespace Draw
         }
 
 
-        public void InputDrag(Vector2 from, Vector2 to,Player player = null)
+        public void InputDrag(Vector2 @from, Vector2 to, Player player = null, bool isRPC = false)
         {
             if (player != null)
             {
@@ -188,19 +199,21 @@ namespace Draw
             }
             
             _texture2DDrawingHelper.Fill(from,to, TrySetColorMaster);
+            
+            if(isRPC) return;
             DrawDrag?.Invoke(from,to);
         }
 
         private bool GetRectPosition(Vector3 pos, out Vector2 localPoint, Camera cam = null)
         {
-            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(_rectTransform, pos, cam, out localPoint))
+            var rectTr = _rectTransform.parent.transform as RectTransform;
+            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTr, pos, cam, out localPoint))
             {
                 return false;
             }
             
-            localPoint.x += _rectTransform.pivot.x * _rectTransform.rect.width;
-            localPoint.y += _rectTransform.pivot.y * _rectTransform.rect.height;
-            
+            localPoint.x += rectTr.pivot.x * rectTr.rect.width;
+            localPoint.y += rectTr.pivot.y * rectTr.rect.height;
             return true;
         }
 
