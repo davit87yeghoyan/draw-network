@@ -1,7 +1,7 @@
 # draw-network
 
 
-DEMO: https://proxium.ru/draw-network/
+DEMO: https://vk01-cossacks-files.agium.com/AniWorks/draw-network/
 
 
 #Setting
